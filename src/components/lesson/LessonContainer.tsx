@@ -24,6 +24,20 @@ export const LessonContainer: React.FC = () => {
     }
   }, [lesson, lessonIdNum, progress?.started, startLesson]);
 
+  useEffect(() => {
+    const handleKeyPress = (e: KeyboardEvent) => {
+      if (!loading && !error && lesson) {
+        const isLastBlock = currentBlockIndex === lesson.blocks.length - 1;
+        const isFirstBlock = currentBlockIndex === 0;
+        if (e.key === 'ArrowRight' && !isLastBlock) handleNextBlock();
+        if (e.key === 'ArrowLeft' && !isFirstBlock) handlePrevBlock();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyPress);
+    return () => window.removeEventListener('keydown', handleKeyPress);
+  }, [currentBlockIndex, loading, error, lesson]);
+
   if (loading) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-purple-900">
@@ -85,16 +99,6 @@ export const LessonContainer: React.FC = () => {
   const progressPercentage = lesson.blocks.length > 0
     ? ((currentBlockIndex + 1) / lesson.blocks.length) * 100
     : 0;
-
-  const handleKeyPress = (e: KeyboardEvent) => {
-    if (e.key === 'ArrowRight' && !isLastBlock) handleNextBlock();
-    if (e.key === 'ArrowLeft' && !isFirstBlock) handlePrevBlock();
-  };
-
-  useEffect(() => {
-    window.addEventListener('keydown', handleKeyPress);
-    return () => window.removeEventListener('keydown', handleKeyPress);
-  }, [currentBlockIndex]);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-purple-900">
