@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/group-therapy-course/static/css/main.855eeaaa.css",
-    "main.js": "/group-therapy-course/static/js/main.500056c3.js",
+    "main.js": "/group-therapy-course/static/js/main.a592ce74.js",
     "static/js/186.1a1dbe99.chunk.js": "/group-therapy-course/static/js/186.1a1dbe99.chunk.js",
     "static/js/453.4c6d32e7.chunk.js": "/group-therapy-course/static/js/453.4c6d32e7.chunk.js",
     "index.html": "/group-therapy-course/index.html",
     "main.855eeaaa.css.map": "/group-therapy-course/static/css/main.855eeaaa.css.map",
-    "main.500056c3.js.map": "/group-therapy-course/static/js/main.500056c3.js.map",
+    "main.a592ce74.js.map": "/group-therapy-course/static/js/main.a592ce74.js.map",
     "453.4c6d32e7.chunk.js.map": "/group-therapy-course/static/js/453.4c6d32e7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.855eeaaa.css",
-    "static/js/main.500056c3.js"
+    "static/js/main.a592ce74.js"
   ]
 }
